@@ -1,25 +1,30 @@
-<!doctype html>
-<html>
+<extends base.html>
+<% block title %>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Записи сообщества {{ group.title }} | Yatube</title>
   </head>
-  <body>
-    <h1>{{ group.title }}</h1>
+<% endblock %>
+  
+<% block content %>
+<body>
+    <header>
+      <h1>{{ group.title }}</h1>
+    </header>
+
+    
     <p>
         {{ group.description }}
     </p>
 
     {% for post in posts %}
-      {% if post.group == group %}
-        <h3>
-          Автор: {{ post.author }}, дата публикации: {{ post.pub_date | date:"d M Y" }}
-        </h3>
-        <p>{{ post.text }}</p>
-        <hr>
-      {% endif %}
+      <h3>
+        Автор: {{ post.author }}, дата публикации: {{ post.pub_date | date:"d M Y" }}
+      </h3>
+      <p>{{ post.text }}</p>
+      <hr>
     {% endfor %}
 
   </body>
-</html>
+<% endblock %>
