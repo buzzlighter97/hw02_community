@@ -1,19 +1,12 @@
-<extends base.html>
-<% block title %>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Записи сообщества {{ group.title }} | Yatube</title>
-  </head>
-<% endblock %>
+{% extends 'base.html' %}
+{% block title %} Записи сообщества {{ group.title }} {% endblock %}
   
-<% block content %>
+{% block content %}
 <body>
     <header>
       <h1>{{ group.title }}</h1>
     </header>
 
-    
     <p>
         {{ group.description }}
     </p>
@@ -27,4 +20,4 @@
     {% endfor %}
 
   </body>
-<% endblock %>
+{% endblock %}
